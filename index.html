@@ -240,6 +240,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .talk h3{font-size:clamp(22px,2.6vw,32px);line-height:1.08;letter-spacing:-.02em;font-weight:800}
 .talk p{margin:0;color:var(--muted)}
 .talk.lead h3{font-size:clamp(26px,3.2vw,40px)}
+.talk figcaption{order:-1}
+@media (min-width:761px){.talk:not(.lead){display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:14px;align-content:start}.talk:not(.lead) figcaption{align-self:start}}
 @media (max-width:760px){.talks{grid-template-columns:1fr}.talk.lead .shot{aspect-ratio:4/3}}
 /* ===== Motion layer ===== */
 :root{--glow-a:rgba(14,107,91,.22);--glow-b:rgba(233,162,30,.20);--grid:rgba(17,32,27,.06)}
