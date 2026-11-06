@@ -264,10 +264,9 @@ main > .wrap, main > section{position:relative;z-index:1}
 
 /* skills marquee */
 .marquee{position:relative;z-index:1;overflow:hidden;border-block:1px solid var(--line);padding-block:18px;margin-top:56px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.marquee-track{display:flex;gap:28px;width:max-content;white-space:nowrap}
-.marquee span{font:800 clamp(22px,3vw,34px)/1 var(--display);letter-spacing:-.02em}
-.marquee span:nth-child(odd){color:transparent;-webkit-text-stroke:1.2px var(--ink)}
-.marquee i{font-style:normal;color:var(--spark);font-size:clamp(18px,2.4vw,26px);align-self:center}
+.marquee-track{display:flex;gap:22px;align-items:center;width:max-content;white-space:nowrap}
+.marquee span{font:600 clamp(17px,1.9vw,21px)/1.2 var(--body);letter-spacing:.005em;color:var(--ink)}
+.marquee i{font-style:normal;color:var(--spark);font-size:clamp(12px,1.3vw,15px);align-self:center}
 
 /* card spotlight + tilt */
 .card{position:relative;transform-style:preserve-3d;will-change:transform}
