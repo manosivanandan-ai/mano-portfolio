@@ -1,6 +1,6 @@
 # Mano Sivanandan, Cross-Functional Product Manager & Forward Deployed Engineer
 
-> Mano Sivanandan is a cross-functional Product Manager with forward deployed engineering (FDE) skills. Mano works across customers, sales, operations and engineering to ship and integrate customer-facing products in insurance, logistics, health, school transport and hiring. Open to Product Manager and Forward Deployed Engineer roles.
+> Mano Sivanandan is a cross-functional Product Manager with forward deployed engineering (FDE) skills. Mano works across customers, sales, operations and engineering to ship and integrate customer-facing products in insurance, logistics, health, school transport and hiring.
 
 - Portfolio: https://manosivanandan-ai.github.io/mano-portfolio/
 - LinkedIn: https://linkedin.com/in/mano-sivanandan-78b4b571
@@ -9,6 +9,8 @@
 - Phone: 9677137830
 
 ## Skills
+- Public speaking: conference plenary talks for business audiences
+- Customer enablement: hands-on AI agents and vibe coding workshops
 - Cross-functional leadership: aligning customers, sales, operations and engineering
 - Forward deployed engineering: hands-on builds and integrations alongside customers
 - Product discovery and strategy: turning vague asks into a clear problem, a roadmap and success metrics
@@ -16,6 +18,11 @@
 - CRM and support systems: Zoho CRM and Zoho Desk integration
 - Data and metrics: testing claims against real data, writing metric specs
 - Web and mobile prototyping: React, TypeScript, Tailwind, Expo (Android and iOS)
+
+## Speaking and workshops
+- Zoholics United Kingdom, September 2025: main-stage plenary "Deploying AI to Deliver Powerful Customer Experiences"
+- Brisbane, Australia: hands-on workshop on AI agents and vibe coding
+- Melbourne, Australia: hands-on workshop on AI agents and vibe coding
 
 ## Product management portfolio
 - [Nexora Logistics](https://github.com/manosivanandan-ai/NexoraLogistics): logistics CX platform with quote wizard, shipment tracking, customer portal and Zoho CRM integration
