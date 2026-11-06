@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mano Sivanandan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Mano Sivanandan builds working products for real problems: insurance, logistics, health, school transport and hiring.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a builder's case-file index. Big name + portrait, then project "files" in an asymmetric grid, a capability ledger, and a contact sheet. */
+:root{
+  --bg:#F2F4F1; --surface:#FFFFFF; --ink:#11201B; --muted:#56655F; --line:#D6DDD8;
+  --accent:#0E6B5B; --accent-ink:#FFFFFF; --spark:#E9A21E; --wash:#E3ECE7;
+  --display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0C1513; --surface:#13201C; --ink:#E6EEEA; --muted:#97A8A1; --line:#25352F;
+  --accent:#4CC4A9; --accent-ink:#06120F; --spark:#F2B33D; --wash:#172823; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0C1513; --surface:#13201C; --ink:#E6EEEA; --muted:#97A8A1; --line:#25352F;
+  --accent:#4CC4A9; --accent-ink:#06120F; --spark:#F2B33D; --wash:#172823; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.label{font:500 12px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:21;background:var(--bg)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.mark{font:800 18px/1 var(--display);letter-spacing:-.02em;text-decoration:none}
+.mark span{color:var(--accent)}
+.nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.nav a{text-decoration:none;font-weight:500;font-size:15px;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.nav .hire{background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:999px}
+.nav .hire:hover{color:var(--bg);background:var(--accent)}
+@media (max-width:640px){.nav a:not(.hire){display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center;padding-block:clamp(36px,6vw,72px) 36px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+.reach{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:18px;box-shadow:0 24px 50px -32px rgba(0,0,0,.35);min-width:0}
+.reach-top{display:flex;align-items:center;gap:16px}
+.avatar{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--surface);box-shadow:0 0 0 2px var(--accent);flex:none}
+.reach-top b{display:block;font:800 22px/1.15 var(--display);letter-spacing:-.01em}
+.reach-top span{font-size:14px;color:var(--muted)}
+.reach-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.reach-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);min-width:0}
+.reach-row > div{min-width:0}
+.reach-row .label{display:block;font-size:11px;margin-bottom:3px}
+.reach-row a{font-weight:600;font-size:16px;text-decoration:none;overflow-wrap:anywhere}
+.reach-row a:hover{color:var(--accent);text-decoration:underline}
+.reach .copy{background:var(--wash);color:var(--ink)}
+.reach .copy:hover{background:var(--accent);color:var(--accent-ink)}
+.hero h1{font-size:clamp(56px,10.5vw,148px);line-height:.88;letter-spacing:-.045em;font-weight:800}
+.hero h1 .last{display:block;color:transparent;-webkit-text-stroke:2px var(--ink)}
+.status{display:inline-flex;align-items:center;gap:10px;margin-bottom:28px;padding:7px 14px 7px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-weight:500;font-size:14px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:ping 2.2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent)}80%,100%{box-shadow:0 0 0 10px transparent}}
+.lede{font-size:clamp(19px,2.1vw,24px);line-height:1.45;max-width:46ch;margin:28px 0 0;color:var(--ink)}
+.lede em{font-style:normal;background:linear-gradient(transparent 62%, color-mix(in srgb,var(--spark) 55%,transparent) 62%)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);transition:transform .15s, background .15s, color .15s}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+
+
+/* numbers strip */
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-block:1px solid var(--line);margin-top:24px}
+.strip div{padding:22px 18px;border-left:1px solid var(--line)}
+.strip div:first-child{border-left:0;padding-left:0}
+.strip b{display:block;font:800 clamp(30px,4vw,44px)/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.strip span{font-size:14px;color:var(--muted)}
+@media (max-width:700px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))}.strip div:nth-child(3){border-left:0;padding-left:0}.strip div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+section{padding-block:clamp(56px,8vw,104px)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.head h2{font-size:clamp(36px,5.5vw,68px);line-height:.95;letter-spacing:-.035em;font-weight:800;max-width:14ch}
+.head p{max-width:42ch;color:var(--muted);margin:0}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{font:500 14px var(--body);color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* project grid */
+.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.card{grid-column:span 3;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .2s, box-shadow .2s}
+.card.wide{grid-column:span 6;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.card.third{grid-column:span 2}
+.card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(0,0,0,.35)}
+.viz{background:var(--wash);min-height:190px;display:grid;place-items:center;padding:22px;position:relative;color:var(--accent)}
+.card.wide .viz{min-height:100%}
+.viz svg{width:100%;max-width:340px;height:auto}
+.body{padding:24px 24px 22px;display:flex;flex-direction:column;gap:12px;flex:1;min-width:0}
+.meta{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.card h3{font-size:clamp(24px,2.6vw,32px);line-height:1.05;letter-spacing:-.025em;font-weight:800}
+.card.third h3{font-size:24px}
+.card p{margin:0;color:var(--muted)}
+.card ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.card li::marker{color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.chip{font:500 12px/1 var(--mono);padding:6px 9px;border-radius:6px;background:var(--wash);color:var(--ink)}
+.repo{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:15px;text-decoration:none;color:var(--accent)}
+.repo:hover{text-decoration:underline}
+.ribbon{position:absolute;top:14px;left:14px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;background:var(--spark);color:#1B1405;padding:6px 8px;border-radius:5px}
+@media (max-width:900px){.card,.card.third{grid-column:span 6}.card.wide{grid-template-columns:1fr}.card.wide .viz{min-height:200px}}
+
+/* also built */
+.more{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line);margin-top:40px}
+.more a{display:block;padding:20px 20px 20px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.more a:hover b{color:var(--accent)}
+.more b{display:block;font:600 18px/1.3 var(--display)}
+.more span{font-size:14px;color:var(--muted)}
+@media (max-width:760px){.more{grid-template-columns:1fr}}
+
+/* capabilities */
+.cap{background:var(--ink);color:var(--bg)}
+.cap .label,.cap .head p{color:color-mix(in srgb,var(--bg) 65%,var(--ink))}
+.ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:22px 0;border-top:1px solid color-mix(in srgb,var(--bg) 18%,var(--ink))}
+.row h3{font-size:22px;letter-spacing:-.01em;font-weight:600}
+.row p{margin:6px 0 0;color:color-mix(in srgb,var(--bg) 72%,var(--ink));font-size:15px}
+.row .proof{font:500 12px/1.4 var(--mono);color:var(--spark);text-align:right;max-width:16ch}
+@media (max-width:760px){.ledger{grid-template-columns:1fr}}
+
+/* how I work */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
+.step{border-top:3px solid var(--ink);padding-top:18px}
+.step .label{color:var(--accent)}
+.step h3{font-size:22px;margin:10px 0 8px;letter-spacing:-.01em}
+.step p{margin:0;color:var(--muted);font-size:15px}
+@media (max-width:860px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--accent);color:var(--accent-ink)}
+.contact .label{color:color-mix(in srgb,var(--accent-ink) 75%,var(--accent))}
+.contact h2{font-size:clamp(44px,8vw,112px);line-height:.9;letter-spacing:-.045em;font-weight:800;max-width:12ch;margin:14px 0 40px}
+.sheet{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.line{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 22px;border:1.5px solid color-mix(in srgb,var(--accent-ink) 40%,transparent);border-radius:var(--r);min-width:0}
+.line > div{min-width:0}
+.line .label{display:block;margin-bottom:6px}
+.line a,.line .val{font:600 clamp(18px,2.2vw,26px)/1.2 var(--display);text-decoration:none;overflow-wrap:anywhere;user-select:all}
+.line a:hover{text-decoration:underline}
+.copy{flex:none;font:600 13px var(--body);background:var(--accent-ink);color:var(--accent);border:0;border-radius:999px;padding:9px 14px;cursor:pointer}
+@media (max-width:700px){.sheet{grid-template-columns:1fr}}
+footer{padding-block:28px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* load motion */
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.38s}
+  @keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}.card,.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">Mano<span>.</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#approach">Approach</a>
+      <a class="hire" href="#contact">Hire me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <div class="status rise"><span class="dot" aria-hidden="true"></span>Open to new roles</div>
+        <h1 class="rise d1">Mano <span class="last">Sivanandan</span></h1>
+        <p class="lede rise d2">I take <em>real-world problems</em> in insurance, logistics, health, school transport and hiring, and turn them into products people can actually use.</p>
+        <div class="cta rise d3">
+          <a class="btn solid" href="#work">See my work
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+          <a class="btn" href="#contact">Contact me</a>
+        </div>
+      </div>
+
+      <aside class="reach rise d2" aria-label="Contact details">
+        <div class="reach-top">
+          <img class="avatar" src="mano.jpg" alt="Mano Sivanandan" width="112" height="112">
+          <div><b>Mano Sivanandan</b><span>Product builder · CX &amp; CRM</span></div>
+        </div>
+        <div class="reach-list">
+          <div class="reach-row"><div><span class="label">Email</span><a href="mailto:mano.somca@gmail.com">mano.somca@gmail.com</a></div><button class="copy" type="button" id="copy-email-top" data-copy="mano.somca@gmail.com">Copy</button></div>
+          <div class="reach-row"><div><span class="label">Phone</span><a href="tel:9677137830">96771 37830</a></div><button class="copy" type="button" id="copy-phone-top" data-copy="9677137830">Copy</button></div>
+          <div class="reach-row"><div><span class="label">LinkedIn</span><a href="https://linkedin.com/in/mano-sivanandan-78b4b571" target="_blank" rel="noopener">mano-sivanandan ↗</a></div></div>
+          <div class="reach-row"><div><span class="label">GitHub</span><a href="https://github.com/manosivanandan-ai" target="_blank" rel="noopener">manosivanandan-ai ↗</a></div></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="strip rise d4" aria-label="At a glance">
+      <div><b>9</b><span>products built and published</span></div>
+      <div><b>6</b><span>industries, from insurance to schools</span></div>
+      <div><b>3</b><span>platforms: web, Android and iOS</span></div>
+      <div><b>1</b><span>CRM integration with Zoho, live</span></div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="head">
+        <div><div class="label">Selected work</div><h2>Things I’ve built</h2></div>
+        <p>Each one starts with a person who has a problem. Every project links to its source code on GitHub.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+        <button type="button" id="f-cx" data-f="cx" aria-pressed="false">CX &amp; CRM</button>
+        <button type="button" id="f-mobile" data-f="mobile" aria-pressed="false">Mobile</button>
+        <button type="button" id="f-product" data-f="product" aria-pressed="false">Product strategy</button>
+        <button type="button" id="f-community" data-f="community" aria-pressed="false">Community</button>
+      </div>
+
+      <div class="grid" id="grid">
+
+        <article class="card wide" data-tags="cx">
+          <div class="viz" aria-hidden="true">
+            <span class="ribbon">Featured</span>
+            <svg viewBox="0 0 320 200" fill="none">
+              <rect x="10" y="20" width="300" height="160" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+              <text x="28" y="50" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="10">SHIPMENT NX-20418</text>
+              <text x="28" y="74" fill="var(--ink)" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="20">Sydney → Melbourne</text>
+              <line x1="40" y1="118" x2="280" y2="118" stroke="var(--line)" stroke-width="4" stroke-linecap="round"/>
+              <line x1="40" y1="118" x2="196" y2="118" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="40" cy="118" r="7" fill="currentColor"/><circle cx="118" cy="118" r="7" fill="currentColor"/>
+              <circle cx="196" cy="118" r="9" fill="var(--spark)"/><circle cx="280" cy="118" r="7" fill="var(--surface)" stroke="var(--line)" stroke-width="3"/>
+              <text x="28" y="150" fill="var(--muted)" font-family="Figtree, sans-serif" font-size="11">Picked up</text>
+              <text x="170" y="150" fill="var(--ink)" font-family="Figtree, sans-serif" font-size="11" font-weight="600">In transit</text>
+              <text x="252" y="150" fill="var(--muted)" font-family="Figtree, sans-serif" font-size="11">Delivered</text>
+            </svg>
+          </div>
+          <div class="body">
+            <div class="meta"><span class="label">Logistics · CX platform</span></div>
+            <h3>Nexora Logistics</h3>
+            <p>A customer-facing logistics site that cuts out the paperwork: customers get a quote, track a shipment and check their account in one place.</p>
+            <ul>
+              <li>Step-by-step quote wizard and live shipment tracker</li>
+              <li>Customer portal and operations dashboard with AI insights</li>
+              <li>Connected to Zoho CRM so every quote becomes a lead</li>
+            </ul>
+            <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Zoho CRM API</span></div>
+            <a class="repo" href="https://github.com/manosivanandan-ai/NexoraLogistics" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-tags="cx">
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 320 180" fill="none">
+              <rect x="30" y="16" width="180" height="148" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+              <path d="M58 44l18-8 18 8v14c0 12-8 20-18 24-10-4-18-12-18-24z" fill="currentColor"/>
+              <text x="108" y="52" fill="var(--ink)" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="14">Home cover</text>
+              <text x="108" y="70" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="9">POL-88213</text>
+              <rect x="50" y="98" width="140" height="8" rx="4" fill="var(--wash)"/><rect x="50" y="98" width="96" height="8" rx="4" fill="currentColor"/>
+              <rect x="50" y="122" width="62" height="24" rx="12" fill="var(--wash)"/><text x="62" y="138" fill="var(--ink)" font-family="Figtree, sans-serif" font-size="10" font-weight="600">Claim</text>
+              <rect x="226" y="40" width="72" height="100" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+              <text x="238" y="64" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="8">BROKER</text>
+              <text x="238" y="90" fill="var(--ink)" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="16">$4.2k</text>
+              <text x="238" y="106" fill="var(--muted)" font-family="Figtree, sans-serif" font-size="9">commission</text>
+            </svg>
+          </div>
+          <div class="body">
+            <div class="meta"><span class="label">Insurance · Two-sided platform</span></div>
+            <h3>TerraShield Insurance</h3>
+            <p>An insurance platform for two audiences. Customers get quotes and manage policies, claims and support. Brokers manage their customers and see commissions and renewals.</p>
+            <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Headless CX</span></div>
+            <a class="repo" href="https://github.com/manosivanandan-ai/TerraShieldInsurance" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-tags="mobile">
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 320 180" fill="none">
+              <circle cx="190" cy="92" r="70" fill="currentColor" opacity=".12"/>
+              <circle cx="190" cy="92" r="70" stroke="currentColor" stroke-dasharray="6 6" stroke-width="2"/>
+              <circle cx="190" cy="92" r="36" fill="currentColor" opacity=".18"/>
+              <path d="M190 64c-11 0-19 8-19 19 0 14 19 31 19 31s19-17 19-31c0-11-8-19-19-19z" fill="currentColor"/>
+              <circle cx="190" cy="83" r="6" fill="var(--surface)"/>
+              <path d="M40 160 C 80 140, 100 110, 135 105" stroke="var(--ink)" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/>
+              <circle cx="40" cy="160" r="7" fill="var(--spark)"/>
+              <text x="32" y="36" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="10">ALERT RADIUS</text>
+              <text x="32" y="58" fill="var(--ink)" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="22">500 m</text>
+            </svg>
+          </div>
+          <div class="body">
+            <div class="meta"><span class="label">Mobile · Android + iOS</span></div>
+            <h3>DestinationReminder</h3>
+            <p>Nap on the bus without missing your stop. Set a destination and a radius, and the app speaks, vibrates and notifies you when you get close, even in the background.</p>
+            <div class="chips"><span class="chip">Expo</span><span class="chip">React Native</span><span class="chip">Background GPS</span><span class="chip">OpenStreetMap</span></div>
+            <a class="repo" href="https://github.com/manosivanandan-ai/DestinationReminder" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="card third" data-tags="product">
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 240 160" fill="none">
+              <text x="20" y="26" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="9">HIRING FUNNEL</text>
+              <rect x="20" y="40" width="200" height="18" rx="4" fill="currentColor"/>
+              <rect x="20" y="66" width="150" height="18" rx="4" fill="currentColor" opacity=".75"/>
+              <rect x="20" y="92" width="96" height="18" rx="4" fill="currentColor" opacity=".5"/>
+              <rect x="20" y="118" width="44" height="18" rx="4" fill="var(--spark)"/>
+              <text x="72" y="131" fill="var(--ink)" font-family="Figtree, sans-serif" font-size="10" font-weight="600">offer accepted?</text>
+            </svg>
+          </div>
+          <div class="body">
+            <div class="meta"><span class="label">Product · Data audit</span></div>
+            <h3>Hiring pipeline audit</h3>
+            <p>Tested a VP’s claims about job boards and offer acceptance against live Airtable data. Delivered a verdict, a 6-engineer-week roadmap and a metrics spec.</p>
+            <div class="chips"><span class="chip">PM case study</span><span class="chip">Airtable</span><span class="chip">Metrics</span></div>
+            <a class="repo" href="https://github.com/manosivanandan-ai/PM-Assignment-ByMano-forMyOperator" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="card third" data-tags="mobile">
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 240 160" fill="none">
+              <circle cx="80" cy="82" r="48" stroke="var(--line)" stroke-width="12"/>
+              <circle cx="80" cy="82" r="48" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-dasharray="226 302" transform="rotate(-90 80 82)"/>
+              <text x="80" y="80" text-anchor="middle" fill="var(--ink)" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="22">78</text>
+              <text x="80" y="96" text-anchor="middle" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="8">DAILY SCORE</text>
+              <rect x="152" y="44" width="70" height="14" rx="7" fill="var(--wash)"/><rect x="152" y="44" width="52" height="14" rx="7" fill="currentColor" opacity=".7"/>
+              <rect x="152" y="70" width="70" height="14" rx="7" fill="var(--wash)"/><rect x="152" y="70" width="34" height="14" rx="7" fill="var(--spark)"/>
+              <rect x="152" y="96" width="70" height="14" rx="7" fill="var(--wash)"/><rect x="152" y="96" width="62" height="14" rx="7" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="body">
+            <div class="meta"><span class="label">Health · Coaching app</span></div>
+            <h3>Milo, my everyday coach</h3>
+            <p>A weight-loss coach that turns food, water, walking and sleep into a daily score, streaks and a suggested next step. Built to read data from Apple Health and Health Connect.</p>
+            <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Behaviour design</span></div>
+            <a class="repo" href="https://github.com/manosivanandan-ai/PersonalWeightlossCoach" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="card third" data-tags="community mobile">
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 240 160" fill="none">
+              <rect x="24" y="26" width="192" height="58" rx="14" fill="var(--spark)"/>
+              <rect x="38" y="38" width="30" height="20" rx="4" fill="var(--surface)"/><rect x="74" y="38" width="30" height="20" rx="4" fill="var(--surface)"/><rect x="110" y="38" width="30" height="20" rx="4" fill="var(--surface)"/><rect x="146" y="38" width="30" height="20" rx="4" fill="var(--surface)"/>
+              <circle cx="62" cy="86" r="11" fill="var(--ink)"/><circle cx="176" cy="86" r="11" fill="var(--ink)"/>
+              <text x="24" y="122" fill="var(--ink)" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="16">18 / 24 boarded</text>
+              <rect x="24" y="132" width="192" height="8" rx="4" fill="var(--line)"/><rect x="24" y="132" width="144" height="8" rx="4" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="body">
+            <div class="meta"><span class="label">Community · School transport</span></div>
+            <h3>School bus boarding tracker</h3>
+            <p>Built for my own community: one tap marks each child as boarded, live status shows where the bus is, and parents can see that nobody was left behind.</p>
+            <div class="chips"><span class="chip">React</span><span class="chip">Framer Motion</span><span class="chip">Mobile-first</span></div>
+            <a class="repo" href="https://github.com/manosivanandan-ai/SNPV-Park63-BusApp" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="card wide" data-tags="product">
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 320 180" fill="none">
+              <text x="20" y="96" fill="var(--ink)" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="64" letter-spacing="-3">HEALTH</text>
+              <text x="22" y="132" fill="currentColor" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="28" letter-spacing="-1">FIRST</text>
+              <text x="112" y="132" fill="var(--muted)" font-family="IBM Plex Mono, monospace" font-size="10">Iron + Vitamin C</text>
+              <circle cx="286" cy="40" r="14" fill="var(--spark)"/>
+            </svg>
+          </div>
+          <div class="body">
+            <div class="meta"><span class="label">Food &amp; nutrition · Venture pitch</span></div>
+            <h3>Health First</h3>
+            <p>A product and business pitch for a nutrition brand. Families know what they should eat, but doing it every day is hard. The pitch sets out the problem, a snack-first product line, and how it grows into a platform for every stage of life.</p>
+            <ul>
+              <li>Market framing: a global problem, with India as the starting market</li>
+              <li>Product portfolio, from one snack to a range</li>
+            </ul>
+            <div class="chips"><span class="chip">Product strategy</span><span class="chip">Storytelling</span><span class="chip">HTML/CSS</span></div>
+            <a class="repo" href="https://github.com/manosivanandan-ai/Healthfirst" target="_blank" rel="noopener">View on GitHub ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="more" aria-label="Also built">
+        <a href="https://github.com/manosivanandan-ai/busattendanceapp" target="_blank" rel="noopener"><b>Bus attendance app ↗</b><span>The first version of the bus tracker, in plain JavaScript</span></a>
+        <a href="https://github.com/manosivanandan-ai/IFC" target="_blank" rel="noopener"><b>IFC reports ↗</b><span>A repository for managing reports for IFC</span></a>
+        <a href="https://github.com/manosivanandan-ai/Simplewebsite" target="_blank" rel="noopener"><b>Simple website ↗</b><span>A hand-written HTML and CSS site</span></a>
+      </div>
+
+      <div id="live" hidden>
+        <div class="head" style="margin:56px 0 0">
+          <div><div class="label"><span class="dot" aria-hidden="true" style="display:inline-block;margin-right:8px;vertical-align:1px"></span>Live from GitHub</div><h2 style="font-size:clamp(28px,3.6vw,44px)">Latest projects</h2></div>
+          <p>New public repositories show up here automatically.</p>
+        </div>
+        <div class="more" id="live-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cap" id="skills">
+    <div class="wrap">
+      <div class="head">
+        <div><div class="label">What I bring</div><h2>Skills you can see in the work</h2></div>
+        <p>Every skill here links back to something I’ve built and published.</p>
+      </div>
+      <div class="ledger">
+        <div class="row"><div><h3>Product discovery &amp; strategy</h3><p>Turning vague asks into a clear problem, a roadmap and the metrics that prove it worked.</p></div><span class="proof">Hiring audit · Health First</span></div>
+        <div class="row"><div><h3>Customer experience design</h3><p>Journeys for customers, brokers and operations teams, from quote to claim to support ticket.</p></div><span class="proof">TerraShield · Nexora</span></div>
+        <div class="row"><div><h3>CRM &amp; support systems</h3><p>Connecting front-end products to Zoho CRM and Desk so leads and tickets flow without manual work.</p></div><span class="proof">Nexora → Zoho CRM</span></div>
+        <div class="row"><div><h3>Web &amp; mobile prototyping</h3><p>Production-quality builds in React, TypeScript, Tailwind and Expo, for web, Android and iOS.</p></div><span class="proof">6 TypeScript apps</span></div>
+        <div class="row"><div><h3>Data &amp; metrics</h3><p>Testing claims against real data, finding data-quality issues and writing metric specs.</p></div><span class="proof">Airtable audit</span></div>
+        <div class="row"><div><h3>AI-assisted building</h3><p>Using AI tools to go from idea to a working, shareable product in days instead of months.</p></div><span class="proof">9 shipped builds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="head">
+        <div><div class="label">How I work</div><h2>From problem to product</h2></div>
+        <p>The same four steps run through every project above.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="label">Step 1</span><h3>Find the real person</h3><p>A parent at the bus stop, a broker chasing renewals, a commuter who dozes off. I start with who is stuck and why.</p></div>
+        <div class="step"><span class="label">Step 2</span><h3>Test the assumptions</h3><p>Check claims against data before building anything, the way I did with the hiring pipeline audit.</p></div>
+        <div class="step"><span class="label">Step 3</span><h3>Build something real</h3><p>A working product people can click through, not a slide. It moves the conversation forward faster.</p></div>
+        <div class="step"><span class="label">Step 4</span><h3>Connect the systems</h3><p>Wire it into the tools the business already runs on, like CRM and support desks, so it survives day one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="label">Contact</div>
+      <h2>Let’s build what’s next together.</h2>
+      <div class="sheet">
+        <div class="line">
+          <div><span class="label">Email</span><a href="mailto:mano.somca@gmail.com" id="email">mano.somca@gmail.com</a></div>
+          <button class="copy" type="button" id="copy-email" data-copy="mano.somca@gmail.com">Copy</button>
+        </div>
+        <div class="line">
+          <div><span class="label">Phone</span><a href="tel:9677137830" id="phone">96771 37830</a></div>
+          <button class="copy" type="button" id="copy-phone" data-copy="9677137830">Copy</button>
+        </div>
+        <div class="line">
+          <div><span class="label">LinkedIn</span><a href="https://linkedin.com/in/mano-sivanandan-78b4b571" target="_blank" rel="noopener">mano-sivanandan ↗</a></div>
+        </div>
+        <div class="line">
+          <div><span class="label">GitHub</span><a href="https://github.com/manosivanandan-ai" target="_blank" rel="noopener">manosivanandan-ai ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Mano Sivanandan</span><span>All projects are open on GitHub.</span></div>
+</footer>
+
+<script>
+(function(){
+  var btns = document.querySelectorAll('.filters button');
+  var cards = document.querySelectorAll('#grid .card');
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.getAttribute('data-f');
+      btns.forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
+      cards.forEach(function(c){
+        var tags = (c.getAttribute('data-tags') || '').split(' ');
+        c.hidden = !(f === 'all' || tags.indexOf(f) !== -1);
+      });
+    });
+  });
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = btn.getAttribute('data-copy');
+      var done = function(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy'; }, 1600); };
+      var fallback = function(){
+        var el = btn.parentNode.querySelector('a');
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Selected';
+      };
+      try { navigator.clipboard.writeText(text).then(done, fallback); } catch(e){ fallback(); }
+    });
+  });
+
+  // Live GitHub feed: any public repo not already featured above is listed automatically.
+  var USER = 'manosivanandan-ai';
+  var shown = {};
+  document.querySelectorAll('a[href*="github.com/' + USER + '/"]').forEach(function(a){
+    var name = a.getAttribute('href').split('/' + USER + '/')[1];
+    if (name) shown[name.replace(/\/.*$/, '').toLowerCase()] = true;
+  });
+  var SKIP = { 'busbiardingtracker':1, 'busboardingtracker':1, 'mano-sivanandan-portfolio':1, 'mano-portfolio':1 };
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function pretty(n){ return n.replace(/[-_]+/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2'); }
+  try {
+    fetch('https://api.github.com/users/' + USER + '/repos?per_page=100&sort=created')
+      .then(function(r){ if (!r.ok) throw 0; return r.json(); })
+      .then(function(repos){
+        var fresh = repos.filter(function(r){
+          var k = r.name.toLowerCase();
+          return !r.fork && !r.archived && r.size > 0 && !shown[k] && !SKIP[k] && k !== (USER + '.github.io');
+        });
+        if (!fresh.length) return;
+        document.getElementById('live-list').innerHTML = fresh.map(function(r){
+          var when = new Date(r.created_at).toLocaleDateString(undefined, { month:'short', year:'numeric' });
+          var bits = [r.language, 'added ' + when].filter(Boolean).join(' · ');
+          return '<a href="' + esc(r.html_url) + '" target="_blank" rel="noopener"><b>' + esc(pretty(r.name)) + ' ↗</b><span>' +
+            esc(r.description || 'New project') + '</span><br><span class="label" style="font-size:11px">' + esc(bits) + '</span></a>';
+        }).join('');
+        document.getElementById('live').hidden = false;
+      })
+      .catch(function(){});
+  } catch(e){}
+})();
+</script>
+</body>
+</html>
