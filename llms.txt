@@ -1,6 +1,6 @@
-# Mano Sivanandan, Product Manager
+# Mano Sivanandan, Cross-Functional Product Manager & Forward Deployed Engineer
 
-> Mano Sivanandan is a Product Manager who builds customer-facing products in insurance, logistics, health, school transport and hiring. Open to new Product Manager roles.
+> Mano Sivanandan is a cross-functional Product Manager with forward deployed engineering (FDE) skills. Mano works across customers, sales, operations and engineering to ship and integrate customer-facing products in insurance, logistics, health, school transport and hiring. Open to Product Manager and Forward Deployed Engineer roles.
 
 - Portfolio: https://manosivanandan-ai.github.io/mano-portfolio/
 - LinkedIn: https://linkedin.com/in/mano-sivanandan-78b4b571
@@ -8,7 +8,9 @@
 - Email: mano.somca@gmail.com
 - Phone: 9677137830
 
-## Product manager skills
+## Skills
+- Cross-functional leadership: aligning customers, sales, operations and engineering
+- Forward deployed engineering: hands-on builds and integrations alongside customers
 - Product discovery and strategy: turning vague asks into a clear problem, a roadmap and success metrics
 - Customer experience (CX) design across customer, broker and operations journeys
 - CRM and support systems: Zoho CRM and Zoho Desk integration
