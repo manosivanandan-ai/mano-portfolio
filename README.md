@@ -1,6 +1,6 @@
 # Mano Sivanandan — Portfolio
 
-Personal portfolio of projects across insurance, logistics, health, school transport and hiring.
+Personal portfolio of projects across insurance, logistics, health and school transport.
 
 - `index.html` — the whole site (no build step)
 - `mano.jpg` — headshot

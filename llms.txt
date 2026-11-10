@@ -1,6 +1,6 @@
 # Mano Sivanandan, Cross-Functional Product Manager & Forward Deployed Engineer
 
-> Mano Sivanandan is a cross-functional Product Manager with forward deployed engineering (FDE) skills. Mano works across customers, sales, operations and engineering to ship and integrate customer-facing products in insurance, logistics, health, school transport and hiring.
+> Mano Sivanandan is a cross-functional Product Manager with forward deployed engineering (FDE) skills. Mano works across customers, sales, operations and engineering to ship and integrate customer-facing products in insurance, logistics, health and school transport.
 
 - Portfolio: https://manosivanandan-ai.github.io/mano-portfolio/
 - LinkedIn: https://linkedin.com/in/mano-sivanandan-78b4b571
@@ -27,7 +27,6 @@
 ## Product management portfolio
 - [Nexora Logistics](https://github.com/manosivanandan-ai/NexoraLogistics): logistics CX platform with quote wizard, shipment tracking, customer portal and Zoho CRM integration
 - [TerraShield Insurance](https://github.com/manosivanandan-ai/TerraShieldInsurance): two-sided insurance platform for customers and brokers
-- [Hiring pipeline audit](https://github.com/manosivanandan-ai/PM-Assignment-ByMano-forMyOperator): PM case study with a roadmap and an offer-acceptance metrics spec, built on live Airtable data
 - [DestinationReminder](https://github.com/manosivanandan-ai/DestinationReminder): Android and iOS arrival-alarm app using background GPS
 - [Milo, my everyday coach](https://github.com/manosivanandan-ai/PersonalWeightlossCoach): weight-loss coaching app with daily score and nudges
 - [School bus boarding tracker](https://github.com/manosivanandan-ai/SNPV-Park63-BusApp): community app for tracking children boarding a school bus
